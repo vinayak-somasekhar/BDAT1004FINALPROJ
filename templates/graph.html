@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Viewport" content="width=device-width",initial-scale="1.0">
+    <title>Mobile Rating Chart</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+
+</head>
+<div>
+    <h1 align="center" style="color:rgb(75,192,192);"> Line Graph Depicting Rating for Apple Mobile having color Midnight and storage 256 GB</h1>
+</div>
+<div>
+
+    <a href="/"><button style="width:10%; font-size:25px; height:50%; background-color: grey;color: white;border: 1px solid #e4e4e4;padding: 8px;border-radius: 3px;cursor: pointer;text-align:center;">Home</button></a> </div>
+
+
+<body>
+<canvas id="lineChart" width="900" height="400"></canvas>
+<script>
+    var ctx= document.getElementById("lineChart").getContext("2d");
+    var lineChart= new Chart(ctx, {
+    type:"line",
+    data:{
+    labels: {{labels | safe}},
+    datasets: [
+    {
+    label: "Mobile Rating",
+    data: {{ values | safe}},
+    fill: false,
+    borderColor: "rgb(75,192,192)",
+    lineTension: 0.1
+
+    }]
+    }, options:{responsive:false}
+    })
+</script>
+</body>
+</html>
