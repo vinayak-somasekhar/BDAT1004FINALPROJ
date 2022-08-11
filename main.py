@@ -89,7 +89,7 @@ def scheduling():
     from pymongo import MongoClient
     client = MongoClient('mongodb+srv://vinayak28:Vinayak28@cluster0.ln9qrat.mongodb.net/?retryWrites=true&w=majority')
     da= client.get_database('DataProg')
-    db= da.DataPro
+    db= da.DataProg
 
     for (row,rs) in df.iterrows():
             #print(row)
